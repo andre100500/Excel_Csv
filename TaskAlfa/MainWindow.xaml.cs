@@ -28,9 +28,6 @@ namespace TaskAlfa
             InitializeComponent();
         }
 
-        //public CsvData csvD { get; set; }
-        //public ExcelData excD { get; set; }
-
         public DataFile Value { get; set; }
         public DataFile Value1 { get; set; }
 

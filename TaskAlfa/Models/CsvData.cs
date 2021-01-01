@@ -12,41 +12,25 @@ namespace TaskAlfa.Models
 {
     public class CsvData : IReader , ISave
     {
-        //public int Rest { get; set; }
-        //public long AccountNumberCSV { get; set; }
-        //public string СurrencyCSV { get; set; }
-
         public DataModel Read(string path)
         {
-            // List<DataFile> cd = new List<DataFile>();
-            //int sum = 0;
             DataModel dm = new DataModel();
 
             using (StreamReader reader = new StreamReader(path))
             {
                 using (CsvReader csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
-
                     csvReader.Configuration.Delimiter = ",";
-                    //sum += csvReader.GetField<int>(0);
 
                     csvReader.Read();
                     while (csvReader.Read())
                     {
-                        //sum += csvReader.GetField<int>(0);
-                        //cd.Add(new DataFile
-                        //{
-                        //    Rest = int.Parse(csvReader.GetField<int>(0).ToString()),
-                        //    AccountNumber = csvReader.GetField<long>(1),
-                        //    Сurrency = csvReader.GetField(2)
-                        //});
                         dm.setValue(csvReader.GetField(1), csvReader.GetField(2), csvReader.GetField<double>(0));
                     }
                 }
                 reader.Close();
             }
-           
-            // return cd;
+
             return dm;
         }
 
@@ -62,12 +46,6 @@ namespace TaskAlfa.Models
             {
                 ws.Range[$"A{i + 1}"].Value = result[i];
             }
-            //for (int row=1; row<= lastUsedRow; row++ )
-            //{
-            //        ws.Range[$"A{row}"].Value = Rest;
-            //        ws.Range[$"B{row}"].Value = AccountNumberCSV;
-            //        ws.Range[$"C{row}"].Value = СurrencyCSV;
-            //}
 
             wb.Save();
             wb.Close();

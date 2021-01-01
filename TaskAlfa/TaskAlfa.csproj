@@ -91,7 +91,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Calculaiting.cs" />
     <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\CsvData.cs" />
     <Compile Include="Models\DataFile.cs" />
