@@ -27,10 +27,6 @@ namespace TaskAlfa
         {
             InitializeComponent();
         }
-
-        public DataFile Value { get; set; }
-        public DataFile Value1 { get; set; }
-
         
 
         private DataModel dm1 { get; set; }
@@ -74,7 +70,7 @@ namespace TaskAlfa
                 }
             }
             CsvData csD = new CsvData();
-            csD.Save(@"C:\Users\Andrew\Desktop\TaskChallenge\answer.XLSX", result);
+            csD.Save(@"C:\Users\Desktop\TaskChallenge\answer.XLSX", result);
             MessageBox.Show("Done");
         }
     }

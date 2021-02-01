@@ -41,10 +41,9 @@ namespace TaskAlfa.Models
             Worksheet ws = wb.ActiveSheet;
             Range last = ws.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
 
-            int lastUsedRow = last.Row;
-            for(int i = 0; i < result.Count; i++)
+            for (int i = 0; i < result.Count; i++)
             {
-                ws.Range[$"A{i + 1}"].Value = result[i];
+              ws.Range[$"A{i + 1}"].Value = result[i];
             }
 
             wb.Save();
